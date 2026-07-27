@@ -12,6 +12,7 @@
 - **Telegram:** @elina_zyulyaeva
 - **LinkedIn:** нет
 - **портфолио:** нет, но очень нужно будет сделать
+- **Резюме на hh (под трек performance-маркетолог):** hh.ru/resume/2eeb62a6ff10ddce220039ed1f6d4b31643539
 
 ## Языки
 - Русский — родной
