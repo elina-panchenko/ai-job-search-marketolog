@@ -26,3 +26,4 @@
 | # | Компания | Вакансия / роль | Файл | Статус | Этап / где я сейчас | Следующий шаг | Дедлайн | Обновлено |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Band (школа письма) | Маркетолог по performance и воронкам | [band-performance-marketolog.md](companies/band-performance-marketolog.md) | 🟡 На связи | Заполнила анкету, ждут решения | Ждать ответ HR / приглашение на скрининг | — | 2026-07-27 |
+| 2 | Apple Real Estate (элитная недвижимость) | Маркетолог-лидогенератор в отдел новостроек | [apple-real-estate-marketolog-lidogenerator.md](companies/apple-real-estate-marketolog-lidogenerator.md) | 🟢 Собес | Телефонный скрининг с HR (Валерия) | Созвон **сегодня 2026-07-28 в 16:00**; снять overqualification-риск, показать AI + руки | 2026-07-28 16:00 | 2026-07-28 |
