@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!-- ===== Palette =====
+       Amethyst  #8F38A7  (accent)
+       Platinum  #F0EEF0  (brand light)
+       Teal      #70A288  (accent 2)
+       Ink       #241827  (text)
+       Neutral bg #E9E9EB
+  -->
+
+  <!-- Neutral light-gray canvas -->
+  <rect x="0" y="0" width="1600" height="1200" fill="#E9E9EB"/>
+
+  <!-- subtle quadrant dividers -->
+  <line x1="800" y1="40" x2="800" y2="1160" stroke="#D6D6D9" stroke-width="2"/>
+  <line x1="40" y1="600" x2="1560" y2="600" stroke="#D6D6D9" stroke-width="2"/>
+
+  <!-- quadrant labels -->
+  <g fill="#9A9AA0" font-size="18" letter-spacing="1.5">
+    <text x="60" y="70">ВАРИАНТ 1 · базовый, средний вес</text>
+    <text x="860" y="70">ВАРИАНТ 2 · знак-«М», подпись снизу</text>
+    <text x="60" y="670">ВАРИАНТ 3 · плотный, жирный, скруглённый</text>
+    <text x="860" y="670">ВАРИАНТ 4 · 4 полки, лёгкий, тёплый акцент</text>
+  </g>
+
+  <!-- ================= VARIANT 1 : horizontal, medium ================= -->
+  <g transform="translate(150,235)">
+    <!-- mark: staircase of shelves, top shelf accent, objects on shelves -->
+    <g stroke-linecap="butt">
+      <!-- shelf lines -->
+      <line x1="10"  y1="120" x2="88"  y2="120" stroke="#241827" stroke-width="5"/>
+      <line x1="20"  y1="82"  x2="100" y2="82"  stroke="#241827" stroke-width="5"/>
+      <line x1="30"  y1="44"  x2="128" y2="44"  stroke="#8F38A7" stroke-width="5"/>
+      <!-- objects sitting on shelves -->
+      <circle cx="22" cy="110" r="4.5" fill="#70A288"/>
+      <rect x="30" y="70" width="15" height="5" fill="#8F38A7"/>
+      <rect x="40" y="30" width="11" height="11" fill="#241827"/>
+    </g>
+    <!-- wordmark -->
+    <text x="180" y="72" font-size="56" font-weight="600" fill="#241827" letter-spacing="1">Элина</text>
+    <text x="182" y="106" font-size="21" font-weight="400" fill="#241827" letter-spacing="3.5">маркетинг по полочкам</text>
+  </g>
+
+  <!-- ================= VARIANT 2 : mark reads as "М", label below ================= -->
+  <g transform="translate(1050,180)">
+    <!-- centered mark with two verticals forming M silhouette -->
+    <g stroke-linecap="butt">
+      <!-- outer verticals -->
+      <line x1="8"   y1="30"  x2="8"   y2="128" stroke="#241827" stroke-width="3.5"/>
+      <line x1="120" y1="30"  x2="120" y2="128" stroke="#241827" stroke-width="3.5"/>
+      <!-- shelf lines (staircase inside) -->
+      <line x1="8"   y1="118" x2="86"  y2="118" stroke="#241827" stroke-width="3.5"/>
+      <line x1="20"  y1="80"  x2="100" y2="80"  stroke="#241827" stroke-width="3.5"/>
+      <line x1="32"  y1="42"  x2="120" y2="42"  stroke="#8F38A7" stroke-width="3.5"/>
+      <!-- objects -->
+      <circle cx="20" cy="108" r="4" fill="#70A288"/>
+      <rect x="30" y="69" width="14" height="5" fill="#8F38A7"/>
+      <rect x="42" y="29" width="10" height="10" fill="#241827"/>
+    </g>
+    <!-- wordmark below -->
+    <text x="64" y="185" text-anchor="middle" font-size="46" font-weight="600" fill="#241827" letter-spacing="1.5">Элина</text>
+    <text x="64" y="214" text-anchor="middle" font-size="16" font-weight="400" fill="#70A288" letter-spacing="3">маркетинг по полочкам</text>
+  </g>
+
+  <!-- ================= VARIANT 3 : bold, rounded, compact ================= -->
+  <g transform="translate(160,835)">
+    <g stroke-linecap="round">
+      <line x1="12"  y1="118" x2="80"  y2="118" stroke="#241827" stroke-width="7.5"/>
+      <line x1="24"  y1="82"  x2="96"  y2="82"  stroke="#241827" stroke-width="7.5"/>
+      <line x1="36"  y1="46"  x2="122" y2="46"  stroke="#8F38A7" stroke-width="7.5"/>
+      <circle cx="26" cy="106" r="5" fill="#70A288"/>
+      <rect x="34" y="70" width="16" height="6" rx="3" fill="#8F38A7"/>
+      <rect x="46" y="32" width="12" height="12" rx="2.5" fill="#241827"/>
+    </g>
+    <text x="175" y="74" font-size="58" font-weight="800" fill="#241827" letter-spacing="-0.5">Элина</text>
+    <text x="177" y="106" font-size="19" font-weight="600" fill="#241827" letter-spacing="2.5">МАРКЕТИНГ ПО ПОЛОЧКАМ</text>
+  </g>
+
+  <!-- ================= VARIANT 4 : 4 shelves, light, teal accent ================= -->
+  <g transform="translate(960,820)" font-family="Verdana, 'Helvetica Neue', Arial, sans-serif">
+    <g stroke-linecap="butt">
+      <line x1="10"  y1="132" x2="80"  y2="132" stroke="#241827" stroke-width="3.5"/>
+      <line x1="18"  y1="102" x2="94"  y2="102" stroke="#241827" stroke-width="3.5"/>
+      <line x1="26"  y1="72"  x2="108" y2="72"  stroke="#241827" stroke-width="3.5"/>
+      <line x1="34"  y1="42"  x2="132" y2="42"  stroke="#8F38A7" stroke-width="3.5"/>
+      <circle cx="20" cy="123" r="4" fill="#70A288"/>
+      <rect x="26" y="92" width="13" height="5" fill="#241827"/>
+      <circle cx="36" cy="63" r="4" fill="#8F38A7"/>
+      <rect x="44" y="30" width="10" height="10" fill="#70A288"/>
+    </g>
+    <text x="180" y="78" font-size="50" font-weight="500" fill="#241827" letter-spacing="0.5">Элина</text>
+    <text x="182" y="108" font-size="17" font-weight="400" fill="#70A288" letter-spacing="3">маркетинг по полочкам</text>
+  </g>
+</svg>
