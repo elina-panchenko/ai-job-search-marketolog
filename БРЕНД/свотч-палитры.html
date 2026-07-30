@@ -1,0 +1,310 @@
+<title>Палитра бренда — Элина · Маркетинг по полочкам</title>
+<style>
+  :root {
+    /* Brand palette — fixed true values */
+    --platinum: #F0EEF0;
+    --amethyst: #8F38A7;
+    --teal:     #70A288;
+    --plum:     #241827;   /* working text / sketch ink */
+
+    /* Themeable chrome tokens (light default) */
+    --bg:       #F0EEF0;
+    --card:     #FBFAFB;
+    --text:     #241827;
+    --text-soft:#6A6470;
+    --hairline: #E1DEE4;
+    --brand:    #8F38A7;
+    --accent:   #8F38A7;
+    --dot:      rgba(36,24,39,.10);
+    --shadow:   14px 16px 0 rgba(143,56,167,.07);
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --sans:  ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono:  ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#1A1720; --card:#262231; --text:#F1EDF3; --text-soft:#A79FAD;
+      --hairline:#383243; --brand:#C77DD9; --accent:#C77DD9;
+      --dot:rgba(255,255,255,.07); --shadow:14px 16px 0 rgba(0,0,0,.30);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg:#F0EEF0; --card:#FBFAFB; --text:#241827; --text-soft:#6A6470;
+    --hairline:#E1DEE4; --brand:#8F38A7; --accent:#8F38A7;
+    --dot:rgba(36,24,39,.10); --shadow:14px 16px 0 rgba(143,56,167,.07);
+  }
+  :root[data-theme="dark"] {
+    --bg:#1A1720; --card:#262231; --text:#F1EDF3; --text-soft:#A79FAD;
+    --hairline:#383243; --brand:#C77DD9; --accent:#C77DD9;
+    --dot:rgba(255,255,255,.07); --shadow:14px 16px 0 rgba(0,0,0,.30);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image: radial-gradient(var(--dot) 1.3px, transparent 1.3px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .3s ease, color .3s ease;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: clamp(24px, 5vw, 64px) clamp(20px, 4vw, 48px) 72px; }
+
+  /* ---- Header ---- */
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(38px, 6vw, 62px); }
+  .eyebrow {
+    font-family: var(--sans); font-size: .7rem; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--text-soft); font-weight: 700; margin: 0 0 16px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(2.1rem, 5.4vw, 3.5rem); line-height: 1.05; margin: 0;
+    letter-spacing: -.015em; text-wrap: balance; color: var(--brand);
+  }
+  h1 .dot { color: var(--teal); font-style: italic; }
+  .underline { display: block; width: min(340px, 80%); height: 14px; margin-top: 6px; color: var(--accent); }
+  .underline svg { width: 100%; height: 100%; display: block; }
+  .lede { font-family: var(--serif); font-style: italic; margin: 18px 0 0; max-width: 42ch; color: var(--text-soft); font-size: 1.12rem; line-height: 1.5; }
+
+  .toggle {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card); border: 1px solid var(--hairline); color: var(--text);
+    font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .02em;
+    padding: 9px 15px; border-radius: 999px; cursor: pointer; transition: border-color .2s, transform .1s;
+  }
+  .toggle:hover { border-color: var(--accent); }
+  .toggle:active { transform: translateY(1px); }
+  .toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---- Swatch grid ---- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .swatch {
+    background: var(--card); border: 1px solid var(--hairline);
+    border-radius: 4px; overflow: hidden; display: flex; flex-direction: column;
+    box-shadow: 4px 5px 0 rgba(36,24,39,.05);
+  }
+  .swatch.support { opacity: .96; }
+  .chip {
+    height: 158px; position: relative; display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 13px; cursor: pointer;
+  }
+  .chip .hexbig {
+    font-family: var(--mono); font-size: .82rem; font-weight: 600; letter-spacing: .02em;
+    padding: 5px 9px; border-radius: 4px;
+  }
+  .chip .copyhint {
+    font-family: var(--sans); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+    opacity: 0; transition: opacity .2s; padding: 5px 8px; border-radius: 4px;
+  }
+  .chip:hover .copyhint, .chip:focus-visible .copyhint { opacity: .9; }
+  .chip:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+  .meta { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 2px; }
+  .role { font-family: var(--sans); font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; color: var(--text-soft); }
+  .name { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; letter-spacing: -.01em; margin-top: 3px; color: var(--text); }
+  .codes { font-family: var(--mono); font-size: .76rem; color: var(--text-soft); margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .use { font-family: var(--sans); font-size: .82rem; color: var(--text-soft); margin-top: 9px; line-height: 1.5; }
+
+  /* ---- Section heads ---- */
+  .sec-head { margin: clamp(48px,7vw,72px) 0 22px; display: flex; align-items: baseline; gap: 16px; }
+  .sec-head h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; letter-spacing: -.01em; margin: 0; color: var(--text); }
+  .sec-head .rule { flex: 1; height: 0; border-top: 1.5px dashed var(--hairline); }
+
+  /* ---- In-context mock (notebook page) ---- */
+  .mock {
+    border-radius: 6px; overflow: hidden; border: 1px solid var(--hairline);
+    background-color: var(--platinum);
+    background-image: radial-gradient(rgba(36,24,39,.09) 1.3px, transparent 1.3px);
+    background-size: 22px 22px; background-position: -1px -1px;
+    color: var(--plum); box-shadow: var(--shadow);
+  }
+  .mock-inner { padding: clamp(26px, 4vw, 42px); display: grid; grid-template-columns: 1fr; gap: 26px; }
+  @media (min-width: 720px) { .mock-inner { grid-template-columns: 1.35fr .95fr; align-items: center; } }
+  .mock .tag { display:inline-block; font-family: var(--sans); font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; font-weight:800; color: var(--plum); background: var(--teal); padding: 5px 11px; border-radius: 999px; }
+  .mock h3 { font-family: var(--serif); color: var(--amethyst); font-size: clamp(1.5rem, 3.4vw, 2.1rem); line-height: 1.12; margin: 15px 0 10px; font-weight: 600; letter-spacing:-.015em; max-width: 20ch; }
+  .mock p { color: #574B5D; margin: 0 0 22px; max-width: 40ch; font-size: .96rem; }
+  .mock .row { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .mock .cta { background: var(--amethyst); color: #fff; border: none; font-family: var(--sans); font-weight: 800; font-size: .92rem; padding: 12px 22px; border-radius: 6px; cursor: pointer; letter-spacing: .01em; }
+  .mock .cta:hover { filter: brightness(1.08); }
+  .mock .link { font-family: var(--sans); color: var(--amethyst); font-weight: 700; font-size: .92rem; text-decoration: none; border-bottom: 3px solid var(--teal); padding-bottom: 2px; }
+
+  /* sketch portrait placeholder */
+  .sketch {
+    justify-self: center; width: 100%; max-width: 240px; aspect-ratio: 4/5;
+    border: 2.5px dashed rgba(143,56,167,.45); border-radius: 10px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    transform: rotate(-1.4deg); background: rgba(255,255,255,.42);
+  }
+  .sketch svg { width: 92px; height: 92px; color: var(--plum); }
+  .sketch span { font-family: var(--serif); font-style: italic; font-size: .92rem; color: #574B5D; text-align: center; padding: 0 14px; }
+  .sketch .pin { position: relative; top: -4px; font-family: var(--sans); font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; font-weight:800; color:#fff; background: var(--amethyst); padding: 3px 8px; border-radius: 999px; transform: rotate(3deg); }
+
+  /* ---- Contrast pairs ---- */
+  .contrast { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; }
+  .pair { border-radius: 5px; padding: 20px 18px; border: 1px solid rgba(0,0,0,.10); }
+  .pair .big { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
+  .pair .sm { font-family: var(--sans); font-size: .8rem; margin-top: 3px; }
+  .pair .ratio { font-family: var(--mono); font-size: .74rem; margin-top: 14px; font-weight: 600; opacity: .9; display:flex; justify-content:space-between; align-items:center; }
+  .badge { font-family: var(--sans); font-weight: 800; letter-spacing:.06em; font-size:.62rem; padding: 3px 7px; border-radius: 4px; background: rgba(255,255,255,.25); }
+
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1.5px dashed var(--hairline); color: var(--text-soft); font-size: .82rem; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+
+  /* ---- toast ---- */
+  #toast {
+    position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px);
+    background: var(--plum); color: #fff; padding: 11px 20px; border-radius: 8px;
+    font-family: var(--sans); font-size: .86rem; font-weight: 600; opacity: 0; pointer-events: none;
+    transition: opacity .25s, transform .25s; z-index: 50; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  #toast b { color: var(--amethyst); font-family: var(--mono); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <p class="eyebrow">Основная цветовая палитра</p>
+      <h1>Элина <span class="dot">·</span> Маркетинг по полочкам</h1>
+      <span class="underline" aria-hidden="true">
+        <svg viewBox="0 0 340 14" preserveAspectRatio="none" fill="none">
+          <path d="M3 9 C 55 3, 95 12, 150 7 S 250 2, 300 9 S 330 11, 337 6"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <p class="lede">Аметист как единственный акцент на тёплой платине, приглушённый теал для деталей. Тёмные чернила держат текст и скетч-линии — сфокусированно и типографично.</p>
+    </div>
+    <button class="toggle" id="themeBtn" aria-label="Переключить тему">
+      <span id="themeIcon">◐</span><span id="themeLabel">Тема</span>
+    </button>
+  </header>
+
+  <main>
+    <div class="grid" id="grid"></div>
+
+    <div class="sec-head"><h2>В контексте</h2><span class="rule"></span></div>
+    <div class="mock">
+      <div class="mock-inner">
+        <div>
+          <span class="tag">Разбор воронки</span>
+          <h3>Хаос в соцсетях — в систему, где каждый рубль работает на заявки</h3>
+          <p>Не «ещё один пост ради лайков», а понятная логика: зачем действие и что дальше. Оцениваю по заявкам, охватам ЦА и окупаемости.</p>
+          <div class="row">
+            <button class="cta">Оставить заявку</button>
+            <a class="link" href="#">Смотреть кейсы →</a>
+          </div>
+        </div>
+        <div class="sketch">
+          <span class="pin">скетч</span>
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M28 40 C 26 20, 74 20, 72 42 C 71 58, 62 72, 50 72 C 38 72, 29 58, 28 40 Z"/>
+            <path d="M27 38 C 33 26, 45 24, 52 27"/>
+            <circle cx="40" cy="44" r="1.6" fill="currentColor" stroke="none"/>
+            <circle cx="59" cy="44" r="1.6" fill="currentColor" stroke="none"/>
+            <path d="M35 40 C 38 37, 43 37, 45 39"/>
+            <path d="M54 39 C 56 37, 61 37, 63 40"/>
+            <path d="M43 58 C 47 61, 53 61, 57 58"/>
+            <path d="M50 72 L 50 84 M36 86 C 40 80, 60 80, 64 86"/>
+          </svg>
+          <span>твой скетч-портрет — здесь</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head"><h2>Контрастные пары</h2><span class="rule"></span></div>
+    <div class="contrast" id="contrast"></div>
+  </main>
+
+  <footer>
+    <span>3 основных + рабочий тёмный · роли, HEX</span>
+    <span>Клик по плашке — скопировать HEX</span>
+  </footer>
+</div>
+
+<div id="toast">Скопировано <b id="toastHex"></b></div>
+
+<script>
+  const palette = [
+    { role:"Акцентный",            name:"Amethyst",     hex:"#8F38A7", text:"#F0EEF0", cls:"",
+      use:"Главный акцент: заголовки, кнопки, ссылки, ключевое. Насыщенный пурпур задаёт характер бренда." },
+    { role:"Фоновый · светлый",    name:"Platinum",     hex:"#F0EEF0", text:"#241827", cls:"",
+      use:"Фон макетов, постов, презентаций. Тёплый нейтральный почти-белый с дот-грид — воздух и типографика." },
+    { role:"Детали · акцент 2",    name:"Muted Teal",   hex:"#70A288", text:"#241827", cls:"",
+      use:"Мелкие детали и второй акцент: чипы, метки, иконки, подчёркивания. Приглушённый теал — мягко оттеняет пурпур." },
+    { role:"Текст · рабочий",      name:"Баклажановые чернила", hex:"#241827", text:"#F0EEF0", cls:"support",
+      use:"Служебный тёмный для читаемого текста и обводки скетчей — в тон акценту. В тройке нет near-black, поэтому он нужен для body." },
+  ];
+
+  function rgb(hex){ const n=parseInt(hex.slice(1),16); return [n>>16&255, n>>8&255, n&255]; }
+  function lum(hex){ const c=rgb(hex).map(v=>{v/=255; return v<=.03928? v/12.92 : Math.pow((v+.055)/1.055,2.4);}); return .2126*c[0]+.7152*c[1]+.0722*c[2]; }
+  function ratio(a,b){ const L1=lum(a),L2=lum(b); const hi=Math.max(L1,L2),lo=Math.min(L1,L2); return (hi+.05)/(lo+.05); }
+  function grade(r){ return r>=7?"AAA": r>=4.5?"AA": r>=3?"AA·large":"— low"; }
+
+  const grid = document.getElementById('grid');
+  palette.forEach(p=>{
+    const rgbStr = rgb(p.hex).join(", ");
+    const el = document.createElement('div');
+    el.className='swatch' + (p.cls ? ' '+p.cls : '');
+    const isLight = lum(p.hex) > .5;
+    const overlay = isLight ? "rgba(36,24,39,.10)" : "rgba(240,238,240,.18)";
+    el.innerHTML = `
+      <div class="chip" tabindex="0" role="button" aria-label="Скопировать ${p.hex}"
+           style="background:${p.hex}; color:${p.text}">
+        <span class="hexbig" style="background:${overlay}">${p.hex}</span>
+        <span class="copyhint" style="background:${overlay}">копировать</span>
+      </div>
+      <div class="meta">
+        <span class="role">${p.role}</span>
+        <span class="name">${p.name}</span>
+        <span class="codes">${p.hex} · rgb(${rgbStr})</span>
+        <span class="use">${p.use}</span>
+      </div>`;
+    const chip = el.querySelector('.chip');
+    chip.addEventListener('click', ()=>copy(p.hex));
+    chip.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); copy(p.hex);} });
+    grid.appendChild(el);
+  });
+
+  const pairs = [
+    { fg:"#241827", bg:"#F0EEF0", label:"Чернила на Platinum", note:"основной текст" },
+    { fg:"#8F38A7", bg:"#F0EEF0", label:"Amethyst на Platinum", note:"заголовки, акцент" },
+    { fg:"#FFFFFF", bg:"#8F38A7", label:"Белый на Amethyst", note:"кнопки CTA" },
+    { fg:"#241827", bg:"#70A288", label:"Чернила на Teal", note:"чипы, детали" },
+    { fg:"#F0EEF0", bg:"#241827", label:"Platinum на чернилах", note:"тёмные блоки" },
+    { fg:"#F0EEF0", bg:"#8F38A7", label:"Platinum на Amethyst", note:"акцентные блоки" },
+  ];
+  const cbox = document.getElementById('contrast');
+  pairs.forEach(p=>{
+    const r = ratio(p.fg,p.bg); const g = grade(r);
+    const el=document.createElement('div');
+    el.className='pair';
+    el.style.background=p.bg; el.style.color=p.fg; el.style.borderColor="rgba(0,0,0,.10)";
+    el.innerHTML=`<div class="big">${p.label}</div><div class="sm">${p.note}</div>
+      <div class="ratio"><span>${r.toFixed(2)} : 1</span><span class="badge">${g}</span></div>`;
+    cbox.appendChild(el);
+  });
+
+  const toast=document.getElementById('toast'), toastHex=document.getElementById('toastHex');
+  let t;
+  function copy(hex){
+    navigator.clipboard?.writeText(hex).catch(()=>{});
+    toastHex.textContent=hex;
+    toast.classList.add('show');
+    clearTimeout(t); t=setTimeout(()=>toast.classList.remove('show'),1400);
+  }
+
+  const root=document.documentElement, btn=document.getElementById('themeBtn'),
+        icon=document.getElementById('themeIcon'), lbl=document.getElementById('themeLabel');
+  function sysDark(){ return matchMedia('(prefers-color-scheme: dark)').matches; }
+  function current(){ return root.getAttribute('data-theme') || (sysDark()?'dark':'light'); }
+  function apply(mode){ root.setAttribute('data-theme',mode);
+    icon.textContent = mode==='dark'?'☾':'☀'; lbl.textContent = mode==='dark'?'Тёмная':'Светлая'; }
+  apply(current());
+  btn.addEventListener('click', ()=> apply(current()==='dark'?'light':'dark'));
+</script>
