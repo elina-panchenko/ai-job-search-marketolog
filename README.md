@@ -33,8 +33,20 @@
 │
 ├── companies-tracker.md      сводная таблица вакансий
 ├── companies/                по файлу на каждую вакансию (+ _шаблон.md)
-└── answers-registry.md       полный реестр всех моих ответов на вопросы анкет/HR
+├── answers-registry.md       полный реестр всех моих ответов на вопросы анкет/HR
+│
+└── .claude/agents/           ОТДЕЛ ИИ-АГЕНТОВ (роли-специалисты)
+    ├── analitik-vakansiy         аналитик вакансий
+    ├── sostavitel-materialov     составитель материалов из facts/
+    ├── redaktor-chelovechnost    финальная вычитка (скилл chelovechnost)
+    ├── assistent-sobesedovaniy   подготовка к собеседованиям
+    └── koordinator-trekera       ведение воронки вакансий
 ```
+
+## Отдел ИИ-агентов
+В `.claude/agents/` живут агенты-специалисты — каждый со своей ролью, работает с
+`facts/`, `brand/` и воронкой вакансий. Обзор состава и маршрут работы —
+в `.claude/agents/README.md`.
 
 ## С чего начать
 1. `WORKFLOW.md` — способ работы (факты → материалы).
